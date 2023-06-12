@@ -9,10 +9,27 @@ body {
 
 hr {
   height: 2px;
-    background-color: #ff0000;
+    background-color: lightblue;
     border:none;
 }
 
 ul {
   list-style-type: none;
+  
+}
+li {
+  margin-bottom: 1px;;
+}
+
+a {
+  color: aliceblue;
+
+}
+
+a:visited {
+  color: lightgrey;
+}
+
+a:hover, a:active {
+  color: #eee;
 }
