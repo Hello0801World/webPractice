@@ -1,0 +1,18 @@
+html {
+  font-size: 22px
+}
+
+body {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+hr {
+  height: 2px;
+    background-color: #ff0000;
+    border:none;
+}
+
+ul {
+  list-style-type: none;
+}
