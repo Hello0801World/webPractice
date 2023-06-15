@@ -17,7 +17,8 @@ img {
 :root{
   /* FONT */
   --FF: "Roboto",sans-serif;
-  --FS: min(2.25rem, 3vh);
+  --FS: clamp(1.75rem, 3vh, 2.25rem);
+  --FS-SM: clamp(1.25rem, 2vh, 1.5rem);
   --FS_XL: 3rem;
 
   /* COLOR */
@@ -60,6 +61,8 @@ img {
 
 html {
   scroll-behavior: smooth;
+  font-size: 1.5rem;
+  font-family: var(--FF);
 }
 body {
   font-family: var(--FF);
@@ -110,7 +113,6 @@ nav a:active {
 main {
   /* padding: 10px 0; */
   flex-grow: 1;
-  padding: var(--PADDING);
   /* display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -119,165 +121,38 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  align-items:center;
+  gap: 1rem;
 }
 
-footer {
-  bottom: 0;
-}
-
-/* PROFILE CARD */
-.card {
-  scroll-margin-top: 8rem;
-  width: min(100%, 250px);
-  background-color: #cbd5e1;
-  border: 2px solid #000;
-  border-radius: 15px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card:target{
-  border: 2px solid rebeccapurple;
-}
-
-.card figure {
-  display: flex;
-  flex-flow:column nowrap;
-}
-
-.card img {
-  border: 5px double #333;
-  border-radius: 50%;
-}
-
-.card img:not([alt]){
-  border: 10px solid red;
-}
-
-.card:nth-child(odd) {
-  background-color: papayawhip;
-}
-
-.card figcaption {
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 1rem;
-  text-align: center;
-}
-
-.card figcaption::after {
-
-  content: 'sparkle';
-  display: block; 
-}
-
-.card p {
-  position: relative;
-}
-
-.card p::before {
-  content: open-quote;
-  font-size: 3em;
-  position: absolute;
-  top: -0.25em;
-  left: -0.5em;
-}
-
-.card p::after{
-  content:close-quote;
-  font-size:3em;
-  position: absolute;
-  top:0.25em;
-  right: -0.5em;
-}
-
-
-
-/* SMALL */
-  @media screen and (min-width: 576px) {
-    main {
-      justify-content: center;
-      flex-flow: row wrap;
-    }
-    .card {
-      width: min(100%, 400px);
-
-    }
-    .card:last-child {
-      order: -1;
-    }
-}
-
-/* MEDIUM */
-@media screen and (min-width: 768px) {
-  nav {
-    display: none;
-  }
-  .card {
-    width: min(100%, 325px);
-  }
-  .card figure {
-    flex-flow: column-reverse;
-  }
-  .card p {
-    margin-top: 1em;
-  }
-}
-
-/* LARGE */ 
-@media screen and (min-width: 992px) {
-  .card {
-    width: min(100%, 400px);
-  }
-  .card :nth-child(2) {
-    order: -1;
-  }
-}
-
-/* XL */
-@media screen and (min-width: 1200px) {
-  .card {
-    width: min(calc(33% - 1rem), 500px)
-  }
-}
-
-/* MOBILE DEVICE LANDSCAPE */
-@media screen and (max-height: 425px) 
-and (min-aspect-ratio: 7/4) {
-  h1 {
-    font-size: 1.5rem;
-
-  }
-
-  main {
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-  }
-  .card {
-    width: min(calc(33% - 0.25rem), 200px);
-  }
-  .card figcaption, .card p {
-    font-size: 1.25rem;
-
-  }
-}
-
-/* FEATURES */
-.square--highlight {
-  --SQUARE-BGCOLOR: cornflowerblue;
-}
-
-.square {
-  background-color: var(--SQUARE_BGCOLOR);
-  width: var(--SQUARE-SIZE);
-  height: var(--SQUARE-SIZE);
-  border: var(--BORDER);
-  border-radius: 15px;
+div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
   display: grid;
   place-content: center;
-  font-size: var(--FS_XL);
-  box-shadow: var(--SHADOWS);
+}
+
+div:first-child {
+  background: blue;
+  /* transform: translateX(-2rem); */
+  /* transform:rotateX(45deg); */
+  transform: scaleX(120%);
+
+}
+
+div:nth-child(2){
+background-color: yellow;
+/* transform: translateY(); */
+/* transform: rotateY(180deg); */
+transform: scaleY(150%);
+}
+
+
+
+div:last-child:hover{
+  background-color: limegreen;
+  /* transform: translate(100%, -2rem); */
+  /* transform: rotateZ(78deg); */
+  /* transform: scale(50%, 50%); */
 }
